@@ -1,0 +1,42 @@
+ Guía de Siglas del Resumen de SARIMAX
+ 
+ --> coef (Coeficiente): El valor estimado del parámetro. std err (Error Estándar): 
+ Margen de imprecisión en la estimación del coeficiente 
+ (entre más bajo, mejor).
+ 
+ --> z (Estadístico Z): Indica a cuántas desviaciones estándar está el coeficiente del cero (coef / std err).
+ 
+ --> P>|z| (p-valor del coeficiente): Mide si el parámetro es realmente útil o si es cero por azar.
+Criterio: Debe ser $< 0.05$ para confirmar que el término es estadísticamente significativo.
+ 
+ --> [0.025 - 0.975] 
+ (Intervalo de Confianza al 95%): Rango de valores donde se encuentra el verdadero parámetro. 
+ Si no cruza el $0$, el término es significativo. 
+ 
+ --> ma.L1 / ar.L1: El término de Media Móvil (MA) o Autorregresivo (AR) en el retardo 1 (Lag 1). 
+ 
+ --> sigma2 ($\sigma^2$): La varianza del error del modelo 
+ (ruido blanco).HQIC (Hannan-Quinn Information Criterion): Otro criterio de información similar al AIC/BIC.2.
+ 
+
+  Para que los residuos sean Ruido Blanco (el ideal en series temporales), 
+  deben cumplir tres condiciones: 
+  1. no tener patrones pendientes, 
+  2. mantener varianza constante y 
+  3. seguir una distribución normal.
+  
+  --> Ljung-Box / Prob(Q) (Autocorrelación de errores):Hipótesis ($H_0$): 
+  Los residuos son independientes (no hay información del pasado sin capturar). Criterio ideal: Prob(Q) $> 0.05$. 
+  Queremos NO rechazar $H_0$ para confirmar que no queda estructura por modelar.
+
+  --> Heteroskedasticity (H) / Prob(H) (Homocedasticidad):Hipótesis ($H_0$): 
+  La varianza del error es constante a lo largo del tiempo. Criterio ideal: Prob(H) $> 0.05$. 
+  Queremos NO rechazar $H_0$ para confirmar que la volatilidad no cambia con el tiempo.
+
+  --> Jarque-Bera (JB) / Prob(JB) (Normalidad):Hipótesis ($H_0$): Los errores se distribuyen de forma Normal.
+  Criterio ideal: Prob(JB) $> 0.05$.
+  
+  --> Skew (Asimetría): Mide qué tan simétricos son los errores (ideal cercano a $0$).
+
+  --> Kurtosis (Curtosis): Mide qué tan pesadas son las colas de la distribución (ideal cercano a $3.0$). 
+

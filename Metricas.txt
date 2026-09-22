@@ -1,0 +1,30 @@
+¿Qué significa cada sigla?
+1. MAE (Mean Absolute Error / Error Absoluto Medio)
+¿Qué es? Es el error promedio en las mismas unidades de tus datos.
+Explicación sencilla: Suma todas las equivocaciones (sin importar si fueron por exceso o por defecto)
+y saca un promedio simple.
+Traducción humana: "En promedio, el modelo se equivoca por X unidades por cada predicción".
+
+2. MAPE (Mean Absolute Percentage Error / Error Porcentual Absoluto Medio)
+¿Qué es? Es el error expresado en porcentaje (%).
+Explicación sencilla: Medir el error en unidades a veces confunde. Si te equivocas por 10 unidades vendiendo carros,
+es un error pequeñísimo; si te equivocas por 10 unidades vendiendo casas de lujo, sigue siendo pequeño,
+pero ¿y si vendes 12 empanadas? ¡10 de error es gigantesco! El MAPE soluciona esto traduciendo el error a un
+porcentaje relativo.
+Traducción humana: "En promedio, el modelo se equivoca en un X% respecto al valor real".
+
+3. MSE (Mean Squared Error / Error Cuadrático Medio)
+¿Qué es? Eleva cada error al cuadrado antes de promediarlo.
+Explicación sencilla: Al elevar los errores al cuadrado, castiga muy severamente los errores grandes.
+Un error de 2 se convierte en 4, pero un error de 10 se convierte en 100.
+Traducción humana: Nos sirve para saber si el modelo tiene "sustos" o fallas catastróficas ocasionales.
+Sin embargo, su número es difícil de interpretar directamente porque las unidades quedan al cuadrado
+(ej. "pasteles al cuadrado").
+
+4. RMSE (Root Mean Squared Error / Raíz del Error Cuadrático Medio)
+¿Qué es? Es simplemente la raíz cuadrada del MSE.
+Explicación sencilla: Como el MSE dejaba las unidades "al cuadrado",
+le sacamos la raíz cuadrada para volver a las unidades originales.
+Al igual que el MSE, le da más peso a los errores grandes.
+Traducción humana: Es similar al MAE, pero si el RMSE es mucho más grande que el MAE,
+significa que el modelo comete errores puntuales muy grandes de vez en cuando.
