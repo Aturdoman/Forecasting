@@ -1,0 +1,10 @@
+# Librerías del proyecto (Fase 3 - Forecasting)
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.8
+scipy>=1.11
+statsmodels>=0.14
+seaborn>=0.13
+pykalman>=0.9.7
+# Para ejecutar los notebooks en Visual Studio Code
+ipykernel>=6.25
